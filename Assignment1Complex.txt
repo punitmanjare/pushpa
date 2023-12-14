@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Complex {
+    int real,img;
+    Complex(){}
+    Complex(int r,int i)
+    {
+        real=r;
+        img=i;
+    }
+    public static void main(String[] args) {
+        int choice;
+
+        Complex num1= new Complex();
+        Complex num2 = new Complex();
+
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("Enter First Number:-");
+        num1.real=sc.nextInt();
+        System.out.println("Enter First Imginary Number");
+        num1.img=sc.nextInt();
+
+        System.out.println("Enter Second Number:-");
+        num2.real=sc.nextInt();
+        System.out.println("Enter Second imgnary Number");
+        num2.img=sc.nextInt();
+
+        do{
+            System.out.println("\n1.Addition");
+            System.out.println("Enter Your Choice");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                        add(num1,num2);
+                    break;
+            
+                case 2:
+                    break;
+            }
+        }while(choice<2);
+    }
+    public static void add(Complex n1,Complex n2){
+
+        Complex res = new Complex();
+
+        res.real=n1.real+n2.real;
+        res.img=n1.img+n2.img;
+
+        System.out.println("Additon of Two Number is:"+res.real);
+        System.out.println("Additon of Two Number is:"+res.img);
+        
+        
+    }
+}

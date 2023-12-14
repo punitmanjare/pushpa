@@ -1,0 +1,102 @@
+import java.util.Scanner;
+interface Vehicle{
+    public static final int gear=1;
+    public static final int brak=1;
+    public static final int speed=1;
+    abstract void gearchange(int a);
+    abstract void applybreak(int a);
+    abstract void speedup(int a);
+}
+
+class Bicycle implements Vehicle{
+    public void gearchange(int a)
+    {
+        System.out.println("Gear Number:"+a);
+    }
+    public void applybreak(int a){
+        if(a==1){
+            System.out.println("Break Applied:"+a);
+
+        }else
+        {
+            System.out.println("Break Not Applied:"+a);
+        }
+    }
+    public void speedup(int a)
+    {
+        System.out.println("Speed up Sucessfully:"+a);
+    }
+}
+class car implements Vehicle{
+    public void gearchange(int a){
+        System.out.println("Gear Change:"+a);
+    }
+    public void applybreak(int a){
+        if(a==1){
+            System.out.println("Break Applied:"+a);
+        }else{
+            System.out.println("Break Not Applied:"+a);
+        }
+    }
+    public void speedup(int a){
+        System.out.println("Speed up SuccessFully:"+a);
+    }
+}
+class bike implements Vehicle{
+
+    public void gearchange(int a){
+        System.out.println("Gear Change:"+a);
+    }
+    public void applybreak(int a){
+        if(a==1){
+            System.out.println("Break Applied Sucessfully:"+a);
+        }else{
+            System.out.println("Break Applied Sucessully:"+a);
+        }
+    }
+    public void speedup(int a){
+        System.out.println("Speed up Sucessfully:"+a);
+    }
+} 
+class veh1{
+    public static void main(String [] args){
+
+        Scanner sc=new Scanner(System.in);
+        int choice;
+        System.out.println("\n1.Bicycle \n2.car \n3.bike" );
+        do{
+            System.out.println("Enter your Choice:");
+            choice=sc.nextInt();
+            switch(choice)
+            {
+                case 1:
+                Bicycle b=new Bicycle();
+                b.applybreak(1);
+                b.gearchange(1);
+                b.speedup(20);
+                break;
+
+                case 2:
+                bike b1=new bike();
+                b1.applybreak(1);
+                b1.gearchange(1);
+                b1.speedup(30);
+                break;
+
+                case 3:
+                car c=new car();
+                c.applybreak(1);
+                c.gearchange(1);
+                c.speedup(40);
+                break;
+
+                case 4:
+                    System.out.println("Exit");
+                    break;     
+            }
+        }while (choice!=5);
+            
+     }
+  }
+
+

@@ -1,0 +1,120 @@
+import java.util.Scanner;
+class Employee
+{
+    String name,add;
+	String mail;
+    float id,mobile,basic,net;
+ Scanner sc=new Scanner(System.in);
+    void salary()
+    {
+        float da,hra,pf,cf,gross;
+        System.out.println("Enter Basic");
+        basic=sc.nextFloat();
+        da = basic*97/100;
+        hra = basic * 10/100;
+        pf = basic *12/100;
+        cf = basic*0.1f/100;
+        gross = basic+da+hra+pf+cf;
+        net=basic+da+hra-pf-cf;
+        System.out.println("Name:"+name);
+        System.out.println("Basic :"+basic);
+        System.out.println("Gross Salary:"+gross);
+        System.out.println("net Salary:"+net);
+        System.out.println("mailid :"+mail);
+        System.out.println("\n");
+    }
+}
+
+class Programmer extends Employee
+{      
+    Programmer(String name,String mail)
+    {
+    System.out.println("Programmer Salary Details:");
+    this.name = name;
+    this.mail = mail;
+    
+    System.out.println("\n");
+    }
+}
+    class TeamLead extends Employee{
+        
+        TeamLead(String name,String mail)
+        {
+        System.out.println("TeamLead Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        
+        System.out.println("\n");
+        }
+}
+
+   class APM extends Employee{
+        
+       APM(String name,String mail)
+        {
+        System.out.println("APM Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        
+        System.out.println("\n");
+        }
+}
+   class PM extends Employee{
+       
+       PM(String name,String mail)
+       {
+       System.out.println("PM Salary Details:");
+       this.name = name;
+       this.mail = mail;
+       
+       System.out.println("\n");
+       }
+}
+
+    public class inheri
+{ 
+         public static void main(String[] args)
+     { 
+        int ch;	 
+        	 Scanner sc=new Scanner(System.in);
+        	 System.out.println("1.Progrmmer");
+        	 System.out.println("2.Teamleadn");
+        	 System.out.println("3.APM");
+        	 System.out.println("4.PM");
+        	 System.out.println("5.exit");
+        	 
+			do
+        	 {
+        	 
+        	 System.out.println("Enter your choice");
+             ch=sc.nextInt();   
+            
+        	  switch(ch)
+        	 {
+        	 case 1:
+             Programmer P = new Programmer("Sadhna Joshi","XYZ@gmail.com");
+             P.salary();
+        	 break;
+        	 
+        	 case 2:
+        		TeamLead t = new TeamLead("a","b");
+                t.salary();
+                break;
+        	 case 3:
+        		APM AP=new APM("arving","arvind.gmail.com");
+        		AP.salary();
+        		break;
+        	 case 4:
+        		PM p1=new PM("aditya","aditya.gmail.com");
+        		p1.salary();
+        		break; 
+        	 case 5: System.out.println("exit");
+             break;
+             default:System.out.println("wrong choice");
+             return;
+        	 }
+        	 }while(ch!=5);
+        	 }
+     }
+
+
